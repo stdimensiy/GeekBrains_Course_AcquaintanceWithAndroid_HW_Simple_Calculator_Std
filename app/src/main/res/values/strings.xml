@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">Simple Calculator Std</string>
+    <string name="keyPersent">&#37;</string>
+    <string name="keyBackSpace">&#9003;</string>
+    <string name="keyRevers">&#177;</string>
+    <string name="keyDivide">/</string>
+    <string name="keyMultiply">x</string>
+    <string name="keySubtract">-</string>
+    <string name="keyAdd">+</string>
+    <string name="keyGetResult">=</string>
+    <string name="keyPoint">.</string>
+    <string name="keyNumber1">1</string>
+    <string name="keyNumber2">2</string>
+    <string name="keyNumber3">3</string>
+    <string name="keyNumber4">4</string>
+    <string name="keyNumber5">5</string>
+    <string name="keyNumber6">6</string>
+    <string name="keyNumber7">7</string>
+    <string name="keyNumber8">8</string>
+    <string name="keyNumber9">9</string>
+    <string name="keyNumber0">0</string>
+    <string name="keyInversOf">&#185;/&#8339;</string>
+    <string name="keyRadical">&#8730;</string>
+    <string name="keyReset">C</string>
+    <string name="keyExtent">х&#178;</string>
 </resources>
