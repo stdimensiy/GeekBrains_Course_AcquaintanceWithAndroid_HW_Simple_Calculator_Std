@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/actionKeyMemoryRead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:text="MR"
+        android:textSize="@dimen/keyTextSize"
+        app:layout_constraintBottom_toTopOf="@id/actionKeyMemoryPlus"
+        app:layout_constraintEnd_toStartOf="@id/actionKeyPercent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/actionKeyMemoryPlus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:text="M+"
+        android:textSize="@dimen/keyTextSize"
+        app:layout_constraintBottom_toTopOf="@id/actionKeyMemoryMinus"
+        app:layout_constraintEnd_toStartOf="@id/actionKeyReverse"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/actionKeyMemoryMinus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:text="M-"
+        android:textSize="@dimen/keyTextSize"
+        app:layout_constraintBottom_toTopOf="@id/actionKeyMemoryClear"
+        app:layout_constraintEnd_toStartOf="@id/actionKeySquaring"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/actionKeyMemoryClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:text="MC"
+        android:textSize="@dimen/keyTextSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/actionKeySquareRootExtraction"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/actionKeyMemoryMinus" />
+
+    <Button
+        android:id="@+id/actionKeyPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:text="@string/keyPercent"
+        android:textSize="@dimen/keyTextSize"
+        android:insetLeft="4dp"
+        app:layout_constraintBottom_toTopOf="@id/actionKeyReverse"
+        app:layout_constraintEnd_toStartOf="@id/numKey1"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/actionKeyMemoryRead"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/numKey1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:insetLeft="4dp"
+        android:text="@string/keyNumber1"
+        android:textSize="@dimen/keyTextSize"
+        app:layout_constraintBottom_toTopOf="@id/numKey4"
+        app:layout_constraintEnd_toStartOf="@id/numKey2"
+        app:layout_constraintStart_toEndOf="@id/actionKeyPercent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/numKey2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:insetLeft="4dp"
+        android:text="@string/keyNumber2"
+        android:textSize="@dimen/keyTextSize"
+        app:layout_constraintBottom_toTopOf="@+id/numKey5"
+        app:layout_constraintEnd_toStartOf="@id/numKey3"
+        app:layout_constraintStart_toEndOf="@id/numKey1"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/numKey3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:insetLeft="4dp"
+        android:text="@string/keyNumber3"
+        android:textSize="@dimen/keyTextSize"
+        app:layout_constraintBottom_toTopOf="@id/numKey6"
+        app:layout_constraintEnd_toStartOf="@id/actionKeyBackspace"
+        app:layout_constraintStart_toEndOf="@id/numKey2"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/actionKeyBackspace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:insetLeft="4dp"
+        android:text="@string/keyBackSpace"
+        android:textSize="@dimen/keyTextSize"
+        app:layout_constraintBottom_toTopOf="@id/actionKeyMultiplication"
+        app:layout_constraintEnd_toStartOf="@id/actionKeyReset"
+        app:layout_constraintStart_toEndOf="@id/numKey3"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/actionKeyReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:insetLeft="4dp"
+        android:text="@string/keyReset"
+        android:textSize="@dimen/keyTextSize"
+        app:layout_constraintBottom_toTopOf="@id/actionKeyDivision"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/actionKeyBackspace"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/actionKeyReverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:text="@string/keyInversOf"
+        android:textSize="@dimen/keyTextSize"
+        android:insetLeft="4dp"
+        app:layout_constraintBottom_toTopOf="@id/actionKeySquaring"
+        app:layout_constraintEnd_toStartOf="@id/numKey4"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/actionKeyMemoryPlus" />
+
+    <Button
+        android:id="@+id/numKey4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:insetLeft="4dp"
+        android:text="@string/keyNumber4"
+        android:textSize="@dimen/keyTextSize"
+        app:layout_constraintBottom_toTopOf="@id/numKey7"
+        app:layout_constraintEnd_toStartOf="@id/numKey5"
+        app:layout_constraintStart_toEndOf="@id/actionKeyReverse" />
+
+    <Button
+        android:id="@+id/numKey5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:insetLeft="4dp"
+        android:text="@string/keyNumber5"
+        android:textSize="@dimen/keyTextSize"
+        app:layout_constraintBottom_toTopOf="@id/numKey8"
+        app:layout_constraintEnd_toStartOf="@id/numKey6"
+        app:layout_constraintStart_toEndOf="@id/numKey4" />
+
+    <Button
+        android:id="@+id/numKey6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:insetLeft="4dp"
+        android:text="@string/keyNumber6"
+        android:textSize="@dimen/keyTextSize"
+        app:layout_constraintBottom_toTopOf="@id/numKey9"
+        app:layout_constraintEnd_toStartOf="@id/actionKeyMultiplication"
+        app:layout_constraintStart_toEndOf="@id/numKey5" />
+
+    <Button
+        android:id="@+id/actionKeyMultiplication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:insetLeft="4dp"
+        android:text="@string/keyMultiply"
+        android:textSize="@dimen/keyTextSize"
+        app:layout_constraintBottom_toTopOf="@id/actionKeyAddition"
+        app:layout_constraintEnd_toStartOf="@id/actionKeyDivision"
+        app:layout_constraintStart_toEndOf="@id/numKey6" />
+
+    <Button
+        android:id="@+id/actionKeyDivision"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:insetLeft="4dp"
+        android:text="@string/keyDivide"
+        android:textSize="@dimen/keyTextSize"
+        app:layout_constraintBottom_toTopOf="@id/actionKeySubtraction"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/actionKeyMultiplication" />
+
+    <Button
+        android:id="@+id/actionKeySquaring"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:text="@string/keyExtent"
+        android:textSize="@dimen/keyTextSize"
+        android:insetLeft="4dp"
+        app:layout_constraintBottom_toTopOf="@id/actionKeySquareRootExtraction"
+        app:layout_constraintEnd_toStartOf="@id/numKey7"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/actionKeyMemoryMinus" />
+
+    <Button
+        android:id="@+id/numKey7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:insetLeft="4dp"
+        android:text="@string/keyNumber7"
+        android:textSize="@dimen/keyTextSize"
+        app:layout_constraintBottom_toTopOf="@id/numKey0"
+        app:layout_constraintEnd_toStartOf="@id/numKey8"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/actionKeySquaring" />
+
+    <Button
+        android:id="@+id/numKey8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:insetLeft="4dp"
+        android:text="@string/keyNumber8"
+        android:textSize="@dimen/keyTextSize"
+        app:layout_constraintBottom_toTopOf="@id/actionKeyNegative"
+        app:layout_constraintEnd_toStartOf="@id/numKey9"
+        app:layout_constraintStart_toEndOf="@id/numKey7" />
+
+    <Button
+        android:id="@+id/numKey9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:insetLeft="4dp"
+        android:text="@string/keyNumber9"
+        android:textSize="@dimen/keyTextSize"
+        app:layout_constraintBottom_toTopOf="@id/numKeyPoint"
+        app:layout_constraintEnd_toStartOf="@id/actionKeyAddition"
+        app:layout_constraintStart_toEndOf="@id/numKey8" />
+
+    <Button
+        android:id="@+id/actionKeyAddition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:insetLeft="4dp"
+        android:text="@string/keyAdd"
+        android:textSize="@dimen/keyTextSize"
+        app:layout_constraintBottom_toTopOf="@id/actionKeyResult"
+        app:layout_constraintEnd_toStartOf="@id/actionKeySubtraction"
+        app:layout_constraintStart_toEndOf="@id/numKey9" />
+
+    <Button
+        android:id="@+id/actionKeySubtraction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:insetLeft="4dp"
+        android:text="@string/keySubtract"
+        android:textSize="@dimen/keyTextSize"
+        app:layout_constraintBottom_toTopOf="@id/actionKeyResult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/actionKeyAddition" />
+
+    <Button
+        android:id="@+id/actionKeySquareRootExtraction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:text="@string/keyRadical"
+        android:textSize="@dimen/keyTextSize"
+        android:insetLeft="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/numKey0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/actionKeyMemoryClear" />
+
+    <Button
+        android:id="@+id/numKey0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:insetLeft="4dp"
+        android:text="@string/keyNumber0"
+        android:textSize="@dimen/keyTextSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/actionKeyNegative"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/actionKeySquareRootExtraction" />
+
+    <Button
+        android:id="@+id/actionKeyNegative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:insetLeft="4dp"
+        android:text="@string/keyRevers"
+        android:textSize="@dimen/keyTextSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/numKeyPoint"
+        app:layout_constraintStart_toEndOf="@id/numKey0" />
+
+    <Button
+        android:id="@+id/numKeyPoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:insetLeft="4dp"
+        android:text="@string/keyPoint"
+        android:textSize="@dimen/keyTextSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/numKey9"
+        app:layout_constraintStart_toEndOf="@id/actionKeyNegative" />
+
+    <Button
+        android:id="@+id/actionKeyResult"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyBaseMargin"
+        android:insetLeft="4dp"
+        android:text="@string/keyGetResult"
+        android:textSize="@dimen/keyTextSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/actionKeySubtraction"
+        app:layout_constraintStart_toStartOf="@id/actionKeyAddition" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
