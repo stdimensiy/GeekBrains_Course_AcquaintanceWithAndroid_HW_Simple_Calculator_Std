@@ -3,16 +3,27 @@ package ru.geekbrains.acquaintancewithandroid.hw.simplecalculatorstd;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
+    private TextView mainDisplay;
+    private TextView topCalcDisplay;
+    private BinaryActions currentBinaryAction;
+    private UnaryActions currentUnaryAction;
+    private Double currentValue = 0.0;
+    private Double memoryValue = 0.0;
+    private Double editableValue = 0.0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mainDisplay = findViewById(R.id.mainDisplay);
+        topCalcDisplay = findViewById(R.id.topCalcDisplay);
 
         //инициализируем все кнопки
         Button btn0 = findViewById(R.id.numKey0);
@@ -46,42 +57,124 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener setNum = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Добавляю цифру в число", Toast.LENGTH_SHORT).show();
+                switch (v.getId()) {
+                    case R.id.numKey0:
+                        addSymbolNum('0');
+                        break;
+                    case R.id.numKey1:
+                        addSymbolNum('1');
+                        break;
+                    case R.id.numKey2:
+                        addSymbolNum('2');
+                        break;
+                    case R.id.numKey3:
+                        addSymbolNum('3');
+                        break;
+                    case R.id.numKey4:
+                        addSymbolNum('4');
+                        break;
+                    case R.id.numKey5:
+                        addSymbolNum('5');
+                        break;
+                    case R.id.numKey6:
+                        addSymbolNum('6');
+                        break;
+                    case R.id.numKey7:
+                        addSymbolNum('7');
+                        break;
+                    case R.id.numKey8:
+                        addSymbolNum('8');
+                        break;
+                    case R.id.numKey9:
+                        addSymbolNum('9');
+                        break;
+                    case R.id.numKeyPoint:
+                        addSymbolNum('.');
+                        break;
+                }
             }
         };
 
-        View.OnClickListener setAction = new View.OnClickListener() {
+        View.OnClickListener setBinaryAction = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Записываю арифметическое действие в строку", Toast.LENGTH_SHORT).show();
+                switch (v.getId()) {
+                    case R.id.actionKeyAddition:
+                        currentBinaryAction = BinaryActions.ADD;
+                        preparingArithmeticOperation();
+                        break;
+                    case R.id.actionKeySubtraction:
+                        currentBinaryAction = BinaryActions.SUB;
+                        preparingArithmeticOperation();
+                        break;
+                    case R.id.actionKeyMultiplication:
+                        currentBinaryAction = BinaryActions.MUL;
+                        preparingArithmeticOperation();
+                        break;
+                    case R.id.actionKeyDivision:
+                        currentBinaryAction = BinaryActions.DIV;
+                        preparingArithmeticOperation();
+                        break;
+                }
+            }
+        };
+
+        View.OnClickListener setUnaryAction = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (v.getId()) {
+                    case R.id.actionKeyNegative:
+                        if (mainDisplay.getText().equals("0")) {
+                            // ничего пока не делаю
+                        } else {
+                            mainDisplay.setText("" + (Double.parseDouble(mainDisplay.getText().toString()) * (-1)));
+                        }
+                        break;
+                    case R.id.actionKeySquaring:
+                        if (mainDisplay.getText().equals("0")) {
+                            // ничего пока не делаю
+                        } else {
+                            topCalcDisplay.setText(String.format("%s%s%s", currentUnaryAction.SQR.getPref(), mainDisplay.getText(), currentUnaryAction.SQR.getSuff()));
+                            mainDisplay.setText(String.format("%s", Math.pow(Double.parseDouble(mainDisplay.getText().toString()), 2.0)));
+                        }
+                        break;
+                    case R.id.actionKeySquareRootExtraction:
+                        topCalcDisplay.setText(String.format("%s%s%s", currentUnaryAction.SRE.getPref(), mainDisplay.getText(), currentUnaryAction.SRE.getSuff()));
+                        mainDisplay.setText(String.format("%s", Math.sqrt(Double.parseDouble(mainDisplay.getText().toString()))));
+                        break;
+                    case R.id.actionKeyReverse:
+                        topCalcDisplay.setText(String.format("%s%s%s", currentUnaryAction.REV.getPref(), mainDisplay.getText(), currentUnaryAction.REV.getSuff()));
+                        mainDisplay.setText(String.format("%s", 1 / (Double.parseDouble(mainDisplay.getText().toString()))));
+                        break;
+                }
             }
         };
 
         View.OnClickListener getResult = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "даю команду на вычисление результата арифметического выражения", Toast.LENGTH_SHORT).show();
+                getResult();
             }
         };
 
         View.OnClickListener backspace = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Стираю поседний введенный символ", Toast.LENGTH_SHORT).show();
+                backspaceNum();
             }
         };
 
         View.OnClickListener clean = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Выполняю общий сброс в 0", Toast.LENGTH_SHORT).show();
+                clean();
             }
         };
 
         View.OnClickListener getMemoryValue = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Даю команду получить значение из регистра памяти и записать его в строку", Toast.LENGTH_SHORT).show();
+                mainDisplay.setText(String.format("%s", memoryValue));
             }
         };
 
@@ -89,21 +182,21 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener setAdditionMemoryValue = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Даю команду прибавить текущее значение результата к значению в регистре памяти", Toast.LENGTH_SHORT).show();
+                memoryValue += Double.parseDouble(mainDisplay.getText().toString());
             }
         };
 
         View.OnClickListener setSubtractionMemoryValue = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Даю команду вычесть текущее значение результата из значения в регистре памяти", Toast.LENGTH_SHORT).show();
+                memoryValue -= Double.parseDouble(mainDisplay.getText().toString());
             }
         };
 
         View.OnClickListener setCleanMemoryValue = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Даю команду очистить значение регистра памяти (прировнять к 0)", Toast.LENGTH_SHORT).show();
+                memoryValue = 0.0;
             }
         };
 
@@ -119,15 +212,15 @@ public class MainActivity extends AppCompatActivity {
         btn8.setOnClickListener(setNum);
         btn9.setOnClickListener(setNum);
         btnPoint.setOnClickListener(setNum);
-        btnActionKeyAddition.setOnClickListener(setAction);
-        btnActionKeySubtraction.setOnClickListener(setAction);
-        btnActionKeyMultiplication.setOnClickListener(setAction);
-        btnActionKeyDivision.setOnClickListener(setAction);
-        btnActionKeySquaring.setOnClickListener(setAction);
-        btnActionKeySquareRootExtraction.setOnClickListener(setAction);
-        btnActionKeyReverse.setOnClickListener(setAction);
-        btnActionKeyPercent.setOnClickListener(setAction);
-        btnActionKeyNegative.setOnClickListener(setAction);
+        btnActionKeyAddition.setOnClickListener(setBinaryAction);
+        btnActionKeySubtraction.setOnClickListener(setBinaryAction);
+        btnActionKeyMultiplication.setOnClickListener(setBinaryAction);
+        btnActionKeyDivision.setOnClickListener(setBinaryAction);
+        btnActionKeySquaring.setOnClickListener(setUnaryAction);
+        btnActionKeySquareRootExtraction.setOnClickListener(setUnaryAction);
+        btnActionKeyReverse.setOnClickListener(setUnaryAction);
+        btnActionKeyPercent.setOnClickListener(setBinaryAction);
+        btnActionKeyNegative.setOnClickListener(setUnaryAction);
         btnActionKeyReset.setOnClickListener(clean);
         btnActionKeyBackspace.setOnClickListener(backspace);
         btnActionKeyResult.setOnClickListener(getResult);
@@ -136,4 +229,67 @@ public class MainActivity extends AppCompatActivity {
         btnActionKeyMemoryMinus.setOnClickListener(setSubtractionMemoryValue);
         btnActionKeyMemoryClear.setOnClickListener(setCleanMemoryValue);
     }
+
+    public void addSymbolNum(char c) {
+        // если это первый символ
+        if (mainDisplay.getText().equals("0")) {
+            if (c != '0' && c != '.') {
+                mainDisplay.setText("" + c);
+            } else if (c == '.') {
+                mainDisplay.setText("0" + c);
+            }
+            return;
+        } else if (c == '.' && mainDisplay.getText().toString().indexOf('.') == -1) {
+            mainDisplay.setText(mainDisplay.getText().toString() + c);
+        } else if (c != '.') {
+            mainDisplay.setText(mainDisplay.getText().toString() + c);
+        }
+    }
+
+    public void backspaceNum() {
+        // проверяем если в строке больше 1 символа и этот единстренный символ не равен 0
+        if (mainDisplay.getText().equals("0")) {
+            // ничего не делаем пока
+        } else if (mainDisplay.getText().length() == 1) {
+            mainDisplay.setText("0");
+        } else {
+            mainDisplay.setText(mainDisplay.getText().toString().substring(0, mainDisplay.getText().length() - 1));
+        }
+    }
+
+    public void preparingArithmeticOperation() {
+        topCalcDisplay.setText(mainDisplay.getText() + currentBinaryAction.getTitle());
+        currentValue = Double.parseDouble(mainDisplay.getText().toString());
+        mainDisplay.setText("0");
+    }
+
+    public void getResult() {
+        topCalcDisplay.setText(topCalcDisplay.getText().toString() + mainDisplay.getText().toString() + " = ");
+        switch (currentBinaryAction) {
+            case ADD:
+                currentValue += Double.parseDouble(mainDisplay.getText().toString());
+                mainDisplay.setText(currentValue.toString());
+                break;
+            case SUB:
+                currentValue -= Double.parseDouble(mainDisplay.getText().toString());
+                mainDisplay.setText(currentValue.toString());
+                break;
+            case MUL:
+                currentValue *= Double.parseDouble(mainDisplay.getText().toString());
+                mainDisplay.setText(currentValue.toString());
+                break;
+            case DIV:
+                currentValue /= Double.parseDouble(mainDisplay.getText().toString());
+                mainDisplay.setText(currentValue.toString());
+                break;
+        }
+    }
+
+    public void clean() {
+        currentBinaryAction = null;
+        currentValue = 0.0;
+        mainDisplay.setText("0");
+        topCalcDisplay.setText("");
+    }
+
 }

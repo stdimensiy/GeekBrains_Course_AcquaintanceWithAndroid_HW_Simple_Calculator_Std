@@ -391,7 +391,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="#ffc5cfae"
-        android:text="-0123456789012.34"
+        android:text="@string/keyNumber0"
         android:textAlignment="viewEnd"
         android:textSize="38dp"
         app:layout_constraintBottom_toTopOf="@+id/actionKeyMemoryPlus"
