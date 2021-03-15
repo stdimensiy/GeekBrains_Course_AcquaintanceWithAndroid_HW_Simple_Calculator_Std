@@ -10,7 +10,7 @@
         <item name="colorSecondaryVariant">@color/teal_200</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorOnPrimary</item>
         <!-- Customize your theme here. -->
     </style>
 
@@ -18,10 +18,33 @@
         <item name="android:textSize">@dimen/keyTextSize</item>
         <item name="android:insetLeft">@dimen/keyInsetLeft</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/backgroundTintNumKey</item>
+    </style>
+    <style name="BaseMonitor">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:background">@color/black</item>
     </style>
     <style name="BaseBtn.MemoryFnk">
         <item name="android:textSize">@dimen/memoryKeyLabelTextSize</item>
+        <item name="android:backgroundTint">@color/backgroundTintKeyNight</item>
+        <item name="android:textColor">@color/backgroundTintNumKey</item>
+    </style>
+    <style name="BaseBtn.BasicMathOper">
+        <item name="android:backgroundTint">@color/backgroundTintKeyNight</item>
+        <item name="android:textColor">@color/ebonyPink</item>
+    </style>
+    <style name="BaseBtn.AdditionMathOper">
+        <item name="android:backgroundTint">@color/backgroundTintKeyNight</item>
+        <item name="android:textColor">@color/backgroundTintNumKey</item>
+    </style>
+    <style name="BaseBtn.ResultMathOper">
+        <item name="android:backgroundTint">@color/backgroundTintKeyNight</item>
+        <item name="android:textColor">@color/peru</item>
+    </style>
+    <style name="BaseBtn.ResetAndBS">
+        <item name="android:backgroundTint">@color/backgroundTintKeyNight</item>
+        <item name="android:textColor">@color/brownBurgundy</item>
     </style>
     <style name="BaseBtn.Num">
         <item name="android:textColor">@color/backgroundTintNumKey</item>

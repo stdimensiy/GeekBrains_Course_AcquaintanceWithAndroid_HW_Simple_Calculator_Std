@@ -16,4 +16,5 @@
     <color name="backgroundTintNumKeyNight">#7A333232</color>
     <color name="brownBurgundy">#a52a2a</color>
     <color name="standMonitor">#ffc5cfae</color>
+    <color name="backgroundTintKeyNight">#D5000000</color>
 </resources>
