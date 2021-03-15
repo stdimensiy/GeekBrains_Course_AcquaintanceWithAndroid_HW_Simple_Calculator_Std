@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg5_l_2340">
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyMemoryRead"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -20,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyMemoryPlus"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -33,7 +32,7 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toEndOf="@id/actionKeyMemoryRead" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyMemoryMinus"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -46,7 +45,7 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toEndOf="@id/actionKeyMemoryPlus" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyMemoryClear"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -60,7 +59,7 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toEndOf="@id/actionKeyMemoryMinus" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyPercent"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -74,7 +73,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyNegative"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -87,7 +86,7 @@
         app:layout_constraintEnd_toStartOf="@id/numKeyPoint"
         app:layout_constraintStart_toEndOf="@id/actionKeyPercent" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyReset"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -100,7 +99,7 @@
         app:layout_constraintStart_toEndOf="@id/actionKeyNegative"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyBackspace"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -115,7 +114,7 @@
         app:layout_constraintVertical_chainStyle="packed" />
 
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyReverse"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -128,7 +127,7 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeySquaring"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -141,7 +140,7 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toEndOf="@id/actionKeyReverse" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeySquareRootExtraction"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -154,7 +153,7 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toEndOf="@+id/actionKeySquaring" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyDivision"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -168,7 +167,7 @@
         app:layout_constraintStart_toEndOf="@id/actionKeySquareRootExtraction" />
 
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/numKey7"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -182,7 +181,7 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/numKey8"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -195,7 +194,7 @@
         app:layout_constraintEnd_toStartOf="@id/numKey9"
         app:layout_constraintStart_toEndOf="@id/numKey7" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/numKey9"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -208,7 +207,7 @@
         app:layout_constraintEnd_toStartOf="@id/actionKeyMultiplication"
         app:layout_constraintStart_toEndOf="@id/numKey8" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyMultiplication"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -221,7 +220,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/numKey9" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/numKey4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -234,7 +233,7 @@
         app:layout_constraintEnd_toStartOf="@id/numKey5"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/numKey5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -247,7 +246,7 @@
         app:layout_constraintEnd_toStartOf="@id/numKey6"
         app:layout_constraintStart_toEndOf="@id/numKey4" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/numKey6"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -260,7 +259,7 @@
         app:layout_constraintEnd_toStartOf="@id/actionKeySubtraction"
         app:layout_constraintStart_toEndOf="@id/numKey5" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeySubtraction"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -273,7 +272,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/numKey6" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/numKey1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -287,7 +286,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/numKey2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -301,7 +300,7 @@
         app:layout_constraintStart_toEndOf="@id/numKey1"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/numKey3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -315,7 +314,7 @@
         app:layout_constraintStart_toEndOf="@id/numKey2"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyAddition"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -328,7 +327,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/numKey3" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/numKey0"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -342,7 +341,7 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/numKeyPoint"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -355,7 +354,7 @@
         app:layout_constraintEnd_toStartOf="@id/actionKeyResult"
         app:layout_constraintStart_toEndOf="@id/numKey0" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyResult"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -376,8 +375,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="#ffc5cfae"
-        android:text="45.5 + 15 + 13.75 = "
-        android:textSize="14dp"
+        android:text=""
+        android:textSize="@dimen/topCalcDisplayTextSize"
         app:layout_constraintBottom_toTopOf="@+id/mainDisplay"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -393,7 +392,7 @@
         android:background="#ffc5cfae"
         android:text="@string/keyNumber0"
         android:textAlignment="viewEnd"
-        android:textSize="38dp"
+        android:textSize="@dimen/mainDisplayTextSize"
         app:layout_constraintBottom_toTopOf="@+id/actionKeyMemoryPlus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
