@@ -7,12 +7,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyMemoryRead"
+        style="@style/BaseBtn.AdditionMathOper"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/wetAsphalt"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:text="@string/labelActionKeyMemoryRead"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toTopOf="@id/actionKeyMemoryPlus"
         app:layout_constraintEnd_toStartOf="@id/actionKeyPercent"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -21,12 +18,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyMemoryPlus"
+        style="@style/BaseBtn.AdditionMathOper"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/wetAsphalt"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:text="@string/labelActionKeyMemoryPlus"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toTopOf="@id/actionKeyMemoryMinus"
         app:layout_constraintEnd_toStartOf="@id/actionKeyReverse"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -34,12 +28,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyMemoryMinus"
+        style="@style/BaseBtn.AdditionMathOper"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/wetAsphalt"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:text="@string/labelActionKeyMemoryMinus"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toTopOf="@id/actionKeyMemoryClear"
         app:layout_constraintEnd_toStartOf="@id/actionKeySquaring"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -47,12 +38,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyMemoryClear"
+        style="@style/BaseBtn.AdditionMathOper"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/wetAsphalt"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:text="@string/labelActionKeyMemoryClear"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/actionKeySquareRootExtraction"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -60,12 +48,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyPercent"
+        style="@style/BaseBtn.AdditionMathOper"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/wetAsphalt"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:text="@string/keyPercent"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toTopOf="@id/actionKeyReverse"
         app:layout_constraintEnd_toStartOf="@id/numKey1"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -74,13 +59,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/numKey1"
+        style="@style/BaseBtn.Num"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/backgroundTintNumKey"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:text="@string/keyNumber1"
-        android:textColor="@color/numKeyLabel"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toTopOf="@id/numKey4"
         app:layout_constraintEnd_toStartOf="@id/numKey2"
         app:layout_constraintStart_toEndOf="@id/actionKeyPercent"
@@ -88,13 +69,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/numKey2"
+        style="@style/BaseBtn.Num"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/backgroundTintNumKey"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:text="@string/keyNumber2"
-        android:textColor="@color/numKeyLabel"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toTopOf="@id/numKey5"
         app:layout_constraintEnd_toStartOf="@id/numKey3"
         app:layout_constraintStart_toEndOf="@id/numKey1"
@@ -102,13 +79,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/numKey3"
+        style="@style/BaseBtn.Num"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/backgroundTintNumKey"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:text="@string/keyNumber3"
-        android:textColor="@color/numKeyLabel"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toTopOf="@id/numKey6"
         app:layout_constraintEnd_toStartOf="@id/actionKeyBackspace"
         app:layout_constraintStart_toEndOf="@id/numKey2"
@@ -116,12 +89,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyBackspace"
+        style="@style/BaseBtn.ResetAndBS"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/brownBurgundy"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:text="@string/keyBackSpace"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toTopOf="@id/actionKeyMultiplication"
         app:layout_constraintEnd_toStartOf="@id/actionKeyReset"
         app:layout_constraintStart_toEndOf="@id/numKey3"
@@ -129,13 +99,10 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyReset"
+        style="@style/BaseBtn.ResetAndBS"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/brownBurgundy"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:insetRight="@dimen/keyInsetRight"
         android:text="@string/keyReset"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toTopOf="@id/actionKeyDivision"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/actionKeyBackspace"
@@ -143,12 +110,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyReverse"
+        style="@style/BaseBtn.AdditionMathOper"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/wetAsphalt"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:text="@string/keyInversOf"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toTopOf="@id/actionKeySquaring"
         app:layout_constraintEnd_toStartOf="@id/numKey4"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -156,76 +120,55 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/numKey4"
+        style="@style/BaseBtn.Num"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/backgroundTintNumKey"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:text="@string/keyNumber4"
-        android:textColor="@color/numKeyLabel"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toTopOf="@id/numKey7"
         app:layout_constraintEnd_toStartOf="@id/numKey5"
         app:layout_constraintStart_toEndOf="@id/actionKeyReverse" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/numKey5"
+        style="@style/BaseBtn.Num"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/backgroundTintNumKey"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:text="@string/keyNumber5"
-        android:textColor="@color/numKeyLabel"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toTopOf="@id/numKey8"
         app:layout_constraintEnd_toStartOf="@id/numKey6"
         app:layout_constraintStart_toEndOf="@id/numKey4" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/numKey6"
+        style="@style/BaseBtn.Num"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/backgroundTintNumKey"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:text="@string/keyNumber6"
-        android:textColor="@color/numKeyLabel"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toTopOf="@id/numKey9"
         app:layout_constraintEnd_toStartOf="@id/actionKeyMultiplication"
         app:layout_constraintStart_toEndOf="@id/numKey5" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyMultiplication"
+        style="@style/BaseBtn.BasicMathOper"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/ebonyPink"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:text="@string/keyMultiply"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toTopOf="@id/actionKeyAddition"
         app:layout_constraintEnd_toStartOf="@id/actionKeyDivision"
         app:layout_constraintStart_toEndOf="@id/numKey6" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyDivision"
+        style="@style/BaseBtn.BasicMathOper"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/ebonyPink"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:insetRight="@dimen/keyInsetRight"
         android:text="@string/keyDivide"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toTopOf="@id/actionKeySubtraction"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/actionKeyMultiplication" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeySquaring"
+        style="@style/BaseBtn.AdditionMathOper"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/wetAsphalt"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:text="@string/keyExtent"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toTopOf="@id/actionKeySquareRootExtraction"
         app:layout_constraintEnd_toStartOf="@id/numKey7"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -233,13 +176,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/numKey7"
+        style="@style/BaseBtn.Num"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/backgroundTintNumKey"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:text="@string/keyNumber7"
-        android:textColor="@color/numKeyLabel"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toTopOf="@id/numKey0"
         app:layout_constraintEnd_toStartOf="@id/numKey8"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -247,63 +186,46 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/numKey8"
+        style="@style/BaseBtn.Num"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/backgroundTintNumKey"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:text="@string/keyNumber8"
-        android:textColor="@color/numKeyLabel"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toTopOf="@id/actionKeyNegative"
         app:layout_constraintEnd_toStartOf="@id/numKey9"
         app:layout_constraintStart_toEndOf="@id/numKey7" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/numKey9"
+        style="@style/BaseBtn.Num"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/backgroundTintNumKey"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:text="@string/keyNumber9"
-        android:textColor="@color/numKeyLabel"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toTopOf="@id/numKeyPoint"
         app:layout_constraintEnd_toStartOf="@id/actionKeyAddition"
         app:layout_constraintStart_toEndOf="@id/numKey8" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyAddition"
+        style="@style/BaseBtn.BasicMathOper"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/ebonyPink"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:text="@string/keyAdd"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toTopOf="@id/actionKeyResult"
         app:layout_constraintEnd_toStartOf="@id/actionKeySubtraction"
         app:layout_constraintStart_toEndOf="@id/numKey9" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeySubtraction"
+        style="@style/BaseBtn.BasicMathOper"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/ebonyPink"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:insetRight="@dimen/keyInsetRight"
         android:text="@string/keySubtract"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toTopOf="@id/actionKeyResult"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/actionKeyAddition" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeySquareRootExtraction"
+        style="@style/BaseBtn.AdditionMathOper"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/wetAsphalt"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:text="@string/keyRadical"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/numKey0"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -311,13 +233,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/numKey0"
+        style="@style/BaseBtn.Num"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/backgroundTintNumKey"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:text="@string/keyNumber0"
-        android:textColor="@color/numKeyLabel"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/actionKeyNegative"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -325,51 +243,37 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyNegative"
+        style="@style/BaseBtn.Num"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/backgroundTintNumKey"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:text="@string/keyRevers"
-        android:textColor="@color/numKeyLabel"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/numKeyPoint"
         app:layout_constraintStart_toEndOf="@id/numKey0" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/numKeyPoint"
+        style="@style/BaseBtn.Num"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/backgroundTintNumKey"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:text="@string/keyPoint"
-        android:textColor="@color/numKeyLabel"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/numKey9"
         app:layout_constraintStart_toEndOf="@id/actionKeyNegative" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/actionKeyResult"
+        style="@style/BaseBtn.ResultMathOper"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/peru"
-        android:insetLeft="@dimen/keyInsetLeft"
         android:insetRight="@dimen/keyInsetRight"
         android:text="@string/keyGetResult"
-        android:textSize="@dimen/keyTextSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/actionKeySubtraction"
         app:layout_constraintStart_toStartOf="@id/actionKeyAddition" />
 
     <TextView
         android:id="@+id/topCalcDisplay"
-        android:layout_width="match_parent"
+        style="@style/BaseMonitor"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="#ffc5cfae"
         android:text=""
         android:textSize="@dimen/topCalcDisplayTextSize"
         app:layout_constraintBottom_toTopOf="@id/mainDisplay"
@@ -379,12 +283,9 @@
 
     <TextView
         android:id="@+id/mainDisplay"
-        android:layout_width="match_parent"
+        style="@style/BaseMonitor"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#ffc5cfae"
         android:text="@string/keyNumber0"
         android:textAlignment="viewEnd"
         android:textSize="@dimen/mainDisplayTextSize"

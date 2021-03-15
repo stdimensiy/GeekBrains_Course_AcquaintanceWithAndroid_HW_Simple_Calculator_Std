@@ -13,5 +13,7 @@
     <color name="wetAsphalt">#FF505050</color>
     <color name="numKeyLabel">#050505</color>
     <color name="backgroundTintNumKey">#CAC1C1</color>
+    <color name="backgroundTintNumKeyNight">#7A333232</color>
     <color name="brownBurgundy">#a52a2a</color>
+    <color name="standMonitor">#ffc5cfae</color>
 </resources>
