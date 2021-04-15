@@ -1,4 +1,4 @@
-package ru.geekbrains.acquaintancewithandroid.hw.simplecalculatorstd;
+package ru.geekbrains.acquaintancewithandroid.hw.simplecalculatorstd.domain;
 
 public enum UnaryActions {
     NEG("negate(", ")"),
@@ -6,8 +6,8 @@ public enum UnaryActions {
     SRE("\u221A(", ")"),
     REV("1/(", ")");
 
-    private String pref;
-    private String suff;
+    private final String pref;
+    private final String suff;
 
     UnaryActions(String preff, String suff) {
         this.pref = preff;
