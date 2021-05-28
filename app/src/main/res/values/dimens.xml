@@ -5,4 +5,6 @@
     <dimen name="keyBaseMargin">0dp</dimen>
     <dimen name="keyInsetLeft">4dp</dimen>
     <dimen name="keyInsetRight">4dp</dimen>
+    <dimen name="mainDisplayTextSize">38sp</dimen>
+    <dimen name="topCalcDisplayTextSize">14sp</dimen>
 </resources>
