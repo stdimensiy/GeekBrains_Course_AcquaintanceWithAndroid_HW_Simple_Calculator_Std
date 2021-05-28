@@ -7,6 +7,11 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import ru.geekbrains.acquaintancewithandroid.hw.simplecalculatorstd.domain.BinaryActions;
+import ru.geekbrains.acquaintancewithandroid.hw.simplecalculatorstd.domain.UnaryActions;
+
+import static java.lang.Double.*;
+
 public class MainActivity extends AppCompatActivity {
     private TextView mainDisplay;
     private TextView topCalcDisplay;
@@ -127,24 +132,23 @@ public class MainActivity extends AppCompatActivity {
                         if (mainDisplay.getText().equals("0")) {
                             // ничего пока не делаю
                         } else {
-                            mainDisplay.setText("" + (Double.parseDouble(mainDisplay.getText().toString()) * (-1)));
+                            mainDisplay.setText(String.format("%s", parseDouble(mainDisplay.getText().toString()) * (-1)));
                         }
                         break;
                     case R.id.actionKeySquaring:
-                        if (mainDisplay.getText().equals("0")) {
-                            // ничего пока не делаю
-                        } else {
-                            topCalcDisplay.setText(String.format("%s%s%s", currentUnaryAction.SQR.getPref(), mainDisplay.getText(), currentUnaryAction.SQR.getSuff()));
-                            mainDisplay.setText(String.format("%s", Math.pow(Double.parseDouble(mainDisplay.getText().toString()), 2.0)));
+                        if (!mainDisplay.getText().equals("0")) {
+                            topCalcDisplay.setText(String.format("%s%s%s", UnaryActions.SQR.getPref(), mainDisplay.getText(), UnaryActions.SQR.getSuff()));
+                            mainDisplay.setText(String.format("%s", Math.pow(parseDouble(mainDisplay.getText().toString()), 2.0)));
                         }
+
                         break;
                     case R.id.actionKeySquareRootExtraction:
-                        topCalcDisplay.setText(String.format("%s%s%s", currentUnaryAction.SRE.getPref(), mainDisplay.getText(), currentUnaryAction.SRE.getSuff()));
-                        mainDisplay.setText(String.format("%s", Math.sqrt(Double.parseDouble(mainDisplay.getText().toString()))));
+                        topCalcDisplay.setText(String.format("%s%s%s", UnaryActions.SRE.getPref(), mainDisplay.getText(), UnaryActions.SRE.getSuff()));
+                        mainDisplay.setText(String.format("%s", Math.sqrt(parseDouble(mainDisplay.getText().toString()))));
                         break;
                     case R.id.actionKeyReverse:
-                        topCalcDisplay.setText(String.format("%s%s%s", currentUnaryAction.REV.getPref(), mainDisplay.getText(), currentUnaryAction.REV.getSuff()));
-                        mainDisplay.setText(String.format("%s", 1 / (Double.parseDouble(mainDisplay.getText().toString()))));
+                        topCalcDisplay.setText(String.format("%s%s%s", UnaryActions.REV.getPref(), mainDisplay.getText(), UnaryActions.REV.getSuff()));
+                        mainDisplay.setText(String.format("%s", 1 / (parseDouble(mainDisplay.getText().toString()))));
                         break;
                 }
             }
@@ -182,14 +186,14 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener setAdditionMemoryValue = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                memoryValue += Double.parseDouble(mainDisplay.getText().toString());
+                memoryValue += parseDouble(mainDisplay.getText().toString());
             }
         };
 
         View.OnClickListener setSubtractionMemoryValue = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                memoryValue -= Double.parseDouble(mainDisplay.getText().toString());
+                memoryValue -= parseDouble(mainDisplay.getText().toString());
             }
         };
 
@@ -234,15 +238,14 @@ public class MainActivity extends AppCompatActivity {
         // если это первый символ
         if (mainDisplay.getText().equals("0")) {
             if (c != '0' && c != '.') {
-                mainDisplay.setText("" + c);
+                mainDisplay.setText(String.format("%s", c));
             } else if (c == '.') {
-                mainDisplay.setText("0" + c);
+                mainDisplay.setText(String.format("0%s", c));
             }
-            return;
         } else if (c == '.' && mainDisplay.getText().toString().indexOf('.') == -1) {
-            mainDisplay.setText(mainDisplay.getText().toString() + c);
+            mainDisplay.setText(String.format("%s%s", mainDisplay.getText().toString(), c));
         } else if (c != '.') {
-            mainDisplay.setText(mainDisplay.getText().toString() + c);
+            mainDisplay.setText(String.format("%s%s", mainDisplay.getText().toString(), c));
         }
     }
 
@@ -258,28 +261,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void preparingArithmeticOperation() {
-        topCalcDisplay.setText(mainDisplay.getText() + currentBinaryAction.getTitle());
-        currentValue = Double.parseDouble(mainDisplay.getText().toString());
+        topCalcDisplay.setText(String.format("%s%s", mainDisplay.getText(), currentBinaryAction.getTitle()));
+        currentValue = parseDouble(mainDisplay.getText().toString());
         mainDisplay.setText("0");
     }
 
     public void getResult() {
-        topCalcDisplay.setText(topCalcDisplay.getText().toString() + mainDisplay.getText().toString() + " = ");
+        topCalcDisplay.setText(String.format("%s%s = ", topCalcDisplay.getText().toString(), mainDisplay.getText().toString()));
         switch (currentBinaryAction) {
             case ADD:
-                currentValue += Double.parseDouble(mainDisplay.getText().toString());
+                currentValue += parseDouble(mainDisplay.getText().toString());
                 mainDisplay.setText(currentValue.toString());
                 break;
             case SUB:
-                currentValue -= Double.parseDouble(mainDisplay.getText().toString());
+                currentValue -= parseDouble(mainDisplay.getText().toString());
                 mainDisplay.setText(currentValue.toString());
                 break;
             case MUL:
-                currentValue *= Double.parseDouble(mainDisplay.getText().toString());
+                currentValue *= parseDouble(mainDisplay.getText().toString());
                 mainDisplay.setText(currentValue.toString());
                 break;
             case DIV:
-                currentValue /= Double.parseDouble(mainDisplay.getText().toString());
+                currentValue /= parseDouble(mainDisplay.getText().toString());
                 mainDisplay.setText(currentValue.toString());
                 break;
         }

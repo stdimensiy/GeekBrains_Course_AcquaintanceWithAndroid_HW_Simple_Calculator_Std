@@ -1,4 +1,4 @@
-package ru.geekbrains.acquaintancewithandroid.hw.simplecalculatorstd;
+package ru.geekbrains.acquaintancewithandroid.hw.simplecalculatorstd.domain;
 
 public enum BinaryActions {
     ADD (" + "),
@@ -6,7 +6,7 @@ public enum BinaryActions {
     MUL (" x "),
     DIV (" / ");
 
-    private String title;
+    private final String title;
 
     BinaryActions(String title) {
         this.title = title;
